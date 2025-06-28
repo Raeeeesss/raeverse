@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(45deg, #4CAF50, #81C784, #A5D6A7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.bg-elements {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.floating-image {
+    position: absolute;
+    width: 300px;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    border-radius: 20px;
+    animation: float 8s infinite ease-in-out;
+}
+
+.img1 {
+    top: 10%;
+    left: 5%;
+    background-image: url('https://storage.googleapis.com/gweb-uniblog-publish-prod/images/YT_Shorts_Assets_02.max-600x600.jpg');
+    animation-delay: 0s;
+}
+
+.img2 {
+    top: 40%;
+    right: 5%;
+    background-image: url('https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Instagram_Reels.max-600x600.jpg');
+    animation-delay: 2s;
+}
+
+.img3 {
+    bottom: 10%;
+    left: 15%;
+    background-image: url('https://blog.youtube/wp-content/uploads/2022/09/Youtube-Shorts.jpg');
+    animation-delay: 4s;
+}
+
+.img4 {
+    top: 20%;
+    right: 15%;
+    background-image: url('https://storage.googleapis.com/gweb-uniblog-publish-prod/images/creator_spotlight.max-600x600.jpg');
+    animation-delay: 6s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(1deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(-1deg);
+    }
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 2.5rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 8px 32px rgba(76, 175, 80, 0.15);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2E7D32;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.logo p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.form-container {
+    transition: all 0.3s ease;
+    max-height: 300px;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* reduced from 10px */
+}
+
+.minimized {
+    transform: scale(0.95) translateY(-20px);
+    opacity: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 0.7rem; /* reduced from 1rem */
+    height: 40px; /* Added fixed height */
+}
+
+.input-group input {
+    position: absolute; /* Changed to absolute */
+    width: 100%;
+    height: 100%; /* Added */
+    padding: 0 16px; /* Adjusted padding */
+    background: white;
+    border: 2px solid #E8F5E9;
+    border-radius: 12px;
+    color: #2E7D32;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    z-index: 1; /* Added */
+}
+
+.input-group label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    padding: 0 4px; /* Added */
+    transform: translateY(-50%);
+    background: white; /* Added */
+    color: #81C784;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 2; /* Added */
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: 0;
+    left: 12px;
+    font-size: 0.8rem;
+    transform: translateY(-50%); /* Changed */
+    background: white; /* Changed */
+    color: #4CAF50; /* Changed */
+    font-weight: 500; /* Added */
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px; /* reduced from 14px */
+    margin-top: 5px; /* added */
+    border-radius: 12px;
+    background: #4CAF50;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    background: #2E7D32;
+    box-shadow: 0 4px 20px rgba(76, 175, 80, 0.3);
+}
+
+.signup-option {
+    margin-top: 1rem; /* reduced from 1.5rem */
+    text-align: center;
+    color: #2E7D32;
+}
+
+.signup-option p {
+    color: #66BB6A;
+    margin-bottom: 10px;
+}
+
+.toggle-signup {
+    color: #2E7D32;
+    font-weight: 600;
+    text-decoration: underline;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.toggle-signup:hover {
+    opacity: 1;
+}
+
+.signin-option {
+    margin-top: 1rem;
+    text-align: center;
+    color: #2E7D32;
+}
+
+.signin-option p {
+    color: #66BB6A;
+    margin-bottom: 10px;
+}
+
+.toggle-signin {
+    color: #2E7D32;
+    font-weight: 600;
+    text-decoration: underline;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.toggle-signin:hover {
+    opacity: 1;
+}
+
+#signup {
+    margin-top: 0;
+    padding-top: 10px;
+    border-top: none;
+    animation: slideUp 0.3s ease forwards;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+}

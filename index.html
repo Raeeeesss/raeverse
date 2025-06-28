@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In/Up Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="bg-elements">
+        <div class="floating-image img1"></div>
+        <div class="floating-image img2"></div>
+        <div class="floating-image img3"></div>
+        <div class="floating-image img4"></div>
+    </div>
+    <div class="container">
+        <div class="logo">
+            <h1>RaeVerse</h1>
+            <p>Create & Share Amazing Shorts</p>
+        </div>
+        
+        <div class="form-container" id="signin">
+            <form>
+                <div class="input-group">
+                    <input type="email" placeholder=" " required>
+                    <label>Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder=" " required>
+                    <label>Password</label>
+                </div>
+                <button type="submit">Get Started</button>
+            </form>
+            <div class="signup-option">
+                <p>New creator?</p>
+                <button onclick="toggleSignup()" class="toggle-signup">Create Account</button>
+            </div>
+        </div>
+
+        <div class="form-container" id="signup" style="display: none;">
+            <form>
+                <div class="input-group">
+                    <input type="text" placeholder=" " required>
+                    <label>Full Name</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" placeholder=" " required>
+                    <label>Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder=" " required>
+                    <label>Password</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" placeholder=" " required>
+                    <label>Confirm Password</label>
+                </div>
+                <button type="submit">Join RaeVerse</button>
+            </form>
+            <div class="signin-option">
+                <p>Already have an account?</p>
+                <button onclick="toggleSignup()" class="toggle-signin">Sign In</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleSignup() {
+            const signinForm = document.getElementById('signin');
+            const signupForm = document.getElementById('signup');
+            
+            if (signupForm.style.display === 'none') {
+                signinForm.classList.add('minimized');
+                setTimeout(() => {
+                    signupForm.style.display = 'block';
+                }, 300);
+            } else {
+                signupForm.style.display = 'none';
+                signinForm.classList.remove('minimized');
+            }
+        }
+    </script>
+</body>
+</html>
